@@ -9,13 +9,6 @@ class StudentsController < ApplicationController
   def show
   end
 
-  private
-
-  def set_student
-  #  binding.pry
-    @student = Student.find(params[:id])
-  end
-
   def activate
     @student = Student.find(params[:id])
     if @student.active == true
@@ -24,8 +17,16 @@ class StudentsController < ApplicationController
         @student.active = true
     end
     @student.save
-    binding.pry
+  #  binding.pry
     redirect_to student_path(@student)
   end
+
+  private
+
+  def set_student
+  #  binding.pry
+    @student = Student.find(params[:id])
+  end
+
 
 end
