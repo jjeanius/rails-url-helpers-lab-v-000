@@ -24,6 +24,7 @@ class StudentsController < ApplicationController
         @student.active = true
     end
     @student.save
+    binding.pry
     redirect_to student_path(@student)
   end
 
