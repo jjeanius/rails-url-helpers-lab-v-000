@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get "students/:id", to: "students#show"
   get "students/:id", to: "students#activate", as: 'activate_student'
 
